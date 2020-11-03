@@ -1,4 +1,4 @@
-import { setUserDetails, setUsername } from "../components/actions/githubActions"
+import { setUserDetails, setUsername, setUserRepos } from "../components/actions/githubActions"
 import reducer from "./githubReducer"
 
 
@@ -41,7 +41,6 @@ describe('gihubReducer', () => {
 
     const newState = reducer(state, action)
 
-
     expect(newState).toEqual({
       username: '',
       userDetails: {
@@ -56,4 +55,23 @@ describe('gihubReducer', () => {
     })
   })
   
+  it('should handle SET_USERREPOS actions', () => {
+    const state = {
+      username: '',
+      userDetails: {},
+      userRepos: []
+    }
+
+    const userRepos = ['repo1', 'repo2', 'repo3', 'repo4', 'repo5']
+
+    const action = setUserRepos(userRepos)
+
+    const newState = reducer(state, action)
+
+    expect(newState).toEqual({
+      username: '',
+      userDetails: {},
+      userRepos: ['repo1', 'repo2', 'repo3', 'repo4', 'repo5']
+    })
+  })
 })

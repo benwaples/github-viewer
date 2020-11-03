@@ -5,7 +5,7 @@ export type GithubReducerProps = {
 
 export type ActionType = {
   type: string, 
-  payload: string | UserDetails
+  payload: string | UserDetails | string[]
 }
 
 export type UserDetails = {

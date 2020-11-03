@@ -1,5 +1,5 @@
 import { ActionType } from "../types";
-import { SET_USERDETAILS, SET_USERNAME } from '../components/actions/githubActions'
+import { SET_USERDETAILS, SET_USERNAME, SET_USERREPOS } from '../components/actions/githubActions'
 
 const initialState = {
   username: '',
@@ -18,6 +18,11 @@ export default function reducer(state = initialState, action: ActionType) {
         return {
           ...state,
           userDetails: action.payload
+        }
+    case SET_USERREPOS: 
+        return {
+          ...state,
+          userRepos: action.payload
         }
   }
 }
