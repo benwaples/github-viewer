@@ -3,6 +3,12 @@ export type GithubReducerProps = {
   action: {type: string, payload: string}
 }
 
+export type StateType = {
+  username: string, 
+  userDetails: UserDetails, 
+  userRepos: string[]
+}
+
 export type ActionType = {
   type: string, 
   payload: string | UserDetails | string[]
