@@ -12,7 +12,7 @@ export const UserDetails = () => {
   return (
     <div id="userDetails">
       {
-        userDetails.name.length > 0  &&
+        userDetails.name.length > 0 &&
         (
         <>
           <h1><a href={userDetails.profileUrl}>{userDetails.name}</a></h1>

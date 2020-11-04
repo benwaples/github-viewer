@@ -1,11 +1,11 @@
 import { UserRepoType } from "../types"
 
 export const getUserDetails = (username: string) => {
-  try{
+  
   return fetch(`https://api.github.com/users/${username}`, {
     method: 'GET',
     headers: new Headers({
-      'Authorization': '76f2fb1723b166abdb974c7feed6937f5b8899f8',
+      'Authorization': process.env.MY_GITHUB_TOKEN as string,
       'User-Agent': 'Networkr'
     })
   })
@@ -18,9 +18,7 @@ export const getUserDetails = (username: string) => {
       bio: user.bio,
       publicRepos: user.public_repos
     }))
-  } catch(err) {
-    throw new Error(err)
-  }
+  
   
 }
 
@@ -29,7 +27,7 @@ export const getUserRepos = (username: string) => {
     return fetch(`https://api.github.com/users/${username}/repos`, {
       method: 'GET',
       headers: new Headers({
-        'Authorization': '76f2fb1723b166abdb974c7feed6937f5b8899f8',
+        'Authorization': process.env.MY_GITHUB_TOKEN as string,
         'User-Agent': 'Networkr'
       })
     })

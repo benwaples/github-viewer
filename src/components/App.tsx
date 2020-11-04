@@ -12,7 +12,7 @@ function App() {
     <>
       <Username />
       <UserDetails />
-      {userRepos.length > 1 && <UserRepoList />}
+      {userRepos.length && <UserRepoList />}
     </>
   );
 }
