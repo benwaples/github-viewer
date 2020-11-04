@@ -1,4 +1,4 @@
-import { UserDetails } from "../../types"
+import { UserDetails, UserRepoType } from "../types"
 
 export const SET_USERNAME = 'setUsername'
 export const setUsername = (username: string) => {
@@ -11,6 +11,16 @@ export const setUserDetails = (userDetails: UserDetails) => {
 }
 
 export const SET_USERREPOS = 'setUserRepos'
-export const setUserRepos  = (repos: string[]) => {
+export const setUserRepos  = (repos: UserRepoType[]) => {
   return { type: SET_USERREPOS, payload: repos}
+}
+
+export const SET_LOADING = 'setLoading'
+export const setLoading = (loading: boolean) => {
+  return { type: SET_LOADING, payload: loading}
+}
+
+export const SET_ERROR = 'setError'
+export const setError = (error: string | null) => {
+  return { type: SET_ERROR, payload: error}
 }

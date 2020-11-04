@@ -1,4 +1,4 @@
-import { setUserDetails, setUsername, setUserRepos } from "../components/actions/githubActions"
+import { setUserDetails, setUsername, setUserRepos } from "../actions/githubActions"
 import reducer from "./githubReducer"
 
 
